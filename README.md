@@ -12,45 +12,19 @@ This is a simple Laravel API application that demonstrates CRUD operations for b
 1. **Clone the repository**
 
     ```bash
-    git clone <repository_url>
-    cd <repository_folder>
+    git clone https://github.com/Swannhs/laravel-coding-round.git
+    cd laravel-coding-round
     ```
 
-2. **Build the Docker container**
-
-   Run the following command to build the Docker image:
-
+2. **Run and do testing with docker**
+    
     ```bash
-    docker-compose build
+    docker-compose up -d --build
     ```
 
-3. **Run the Docker container**
+   This will start the application and expose it on port 8000. And do all the test and migration.
 
-   After the build is complete, run the following command to start the containers:
-
-    ```bash
-    docker-compose up -d
-    ```
-
-   This will start the application and expose it on port 8000.
-
-4. **Run migrations**
-
-   To set up the database schema, run the following command:
-
-    ```bash
-    docker-compose exec app php artisan migrate --force
-    ```
-
-5. **Run tests**
-
-   After migrations are done, you can run the tests with the following command:
-
-    ```bash
-    docker-compose exec app php artisan test
-    ```
-
-6. **Access the application**
+3. **Access the application**
 
    The application will be available at:
 
@@ -67,13 +41,3 @@ This is a simple Laravel API application that demonstrates CRUD operations for b
     - **POST /api/tasks**: Create a task (title, is_completed)
     - **PATCH /api/tasks/{id}**: Mark a task as completed
     - **GET /api/tasks/pending**: Get all pending tasks
-
-## Folder Structure
-
-- **app/**: Contains the main Laravel application code (Controllers, Models, etc.)
-- **database/migrations/**: Contains database migrations for creating necessary tables
-- **tests/**: Contains feature and unit tests
-
-## License
-
-This project is open-source and available under the [MIT License](LICENSE).
