@@ -1,0 +1,17 @@
+version: '3.8'
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: laravel_app
+    volumes:
+      - vendor:/app/vendor
+    network_mode: host
+    environment:
+      - APP_ENV=local
+
+volumes:
+  vendor:
+    driver: local
